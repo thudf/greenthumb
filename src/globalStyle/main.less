@@ -1,0 +1,48 @@
+@import './colors.less';
+@import './fonts.less';
+@import './breakpoints.less';
+
+
+// Page Definitions
+@min-page-width: 450px;
+@max-sm-content-size: 75%;
+@max-md-content-size: 70%;
+@max-lg-content-size: 62%;
+@max-xl-content-size: 50%;
+@display-mode: desktop;
+
+@media screen {
+  @media (max-width: @tablet-max) {
+    @display-mode: mobile;
+  }
+
+  @media (min-width: @desktop-sm-min) {
+    @display-mode: desktop;
+  }
+}
+
+
+// Images
+@images: '../../assets/images';
+
+@banner-images-desktop: '@{images}/hero/desktop';
+@banner-images-mobile: '@{images}/hero/mobile';
+@icons: '@{images}/icons';
+@illustrations: '@{images}/illutrations';
+@plant-photos: '@{images}/plant_photos';
+
+// Section
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+// Banner
+@banner-background-color: @softgreen;
+
+// Commands
+
+
+// Results
