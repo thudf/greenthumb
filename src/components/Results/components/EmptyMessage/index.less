@@ -1,0 +1,58 @@
+@import '../../../../globalStyle/main.less';
+
+article#article-results {
+  > div#left-box {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    margin-top: 16px;
+    gap: 13px;
+
+    > h1 {
+      font-family: 'Montserrat';
+      font-weight: 700;
+      font-style: normal;
+      font-size: 45px;
+      line-height: 55px;
+      color: @grey;
+    }
+
+    > h1 + p {
+      font-family: 'Montserrat';
+      font-weight: 400;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 27px;
+      color: @grey;
+    }
+
+    @media screen {
+      @media (max-width: @tablet-max) {
+        > h1 + p {
+          max-width: 100%;
+        }
+      }
+  
+      @media (min-width: @desktop-sm-min) {
+        > h1 + p {
+          max-width: 219px;
+        }
+      }
+    }
+  }
+
+  > div + div#right-box{
+    display: flex;
+
+    > img {
+      margin-top: 16px;
+    }
+
+    @media screen {
+  
+      @media (min-width: @desktop-sm-min) {
+        margin-left: 150px;
+      }
+    }
+  }
+}
