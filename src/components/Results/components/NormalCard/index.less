@@ -1,0 +1,98 @@
+@import '../../../../globalStyle/main.less';
+
+@plant-text-color: #1E6B4E;
+
+article.normal-card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 19px 12px;
+    gap: 16px;
+    background-color: @white;
+    border-radius: 5px;
+
+    > img {
+      align-self: center;
+      max-height: 129px;
+      max-width: 90%;
+    }
+
+    > div:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 2px;
+      width: 100%;
+
+      > section {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        > h1 {
+          font-family: 'Montserrat';
+          font-weight: 700;
+          font-style: normal;
+          font-size: 16px;
+          line-height: 28px;
+          color: @plant-text-color;
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      > aside {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        overflow: hidden;
+
+        > h3 {
+          font-family: 'Montserrat';
+          font-weight: 700;
+          font-style: normal;
+          font-size: 16px;
+          line-height: 28px;
+          color: @plant-text-color;
+        }
+
+        > ul {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 13px;
+          list-style: none;
+
+          > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+          }
+        }
+        
+      }
+    }
+  }
+}
