@@ -1,0 +1,79 @@
+@import '../../../../globalStyle/main.less';
+
+.question-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 75px;
+    width: 100%;
+  }
+
+  p {
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    color: @darkergrey;
+
+    > strong {
+      font-family: 'Montserrat';
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+      color: @darkergrey;
+    }
+  }
+
+  > select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../../../../assets/images/illustrations/select-arrow.png');
+    background-repeat: no-repeat;
+    background-position: calc(~"100% - 18px") center;
+    background-size: 18px 9px;
+    background-color: transparent;
+    border: 1px solid @lightgrey;
+    border-radius: 19px;
+    padding: 6px 18px 7px;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 27px;
+    text-transform: capitalize;
+    color: @lightgrey;
+    position: relative;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    > option {
+      color: black;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:checked {
+        background-color: @grey;
+        color: @white;
+      }
+    }
+  }
+}
