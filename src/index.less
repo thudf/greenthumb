@@ -1,0 +1,21 @@
+@import './globalStyle/main.less';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  background-color: @softgrey;
+  min-width: @min-page-width;
+  
+  & when (@display-mode = mobile) {
+    margin-top: calc(~"(36px + 20px) * (-1)");
+  }
+  
+  & when (@display-mode = desktop) {
+    margin-top: calc(~"(57px + 25px) * (-1)");
+  }
+}

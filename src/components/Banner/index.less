@@ -1,0 +1,92 @@
+@import '../../globalStyle/main.less';
+
+section#banner {
+  .section();
+  background-color: @banner-background-color;
+
+  @media screen {
+    @media (max-width: @tablet-max) {
+      .mobile_banner();
+    }
+
+    @media (min-width: @desktop-sm-min) {
+      .desktop_banner(@max-sm-content-size, 80%, -90%, 92%, 0px, 0px);
+    }
+
+    @media (min-width: @desktop-md-min) {
+      .desktop_banner(@max-md-content-size, 70%, -60%, 70%, 30%, 110%);
+    }
+
+    @media (min-width: @desktop-lg-min) {
+      .desktop_banner(@max-lg-content-size, 50%, 0, 62%, 30%, right);
+    }
+
+    @media (min-width: @desktop-xl-min) {
+      .desktop_banner(@max-xl-content-size, 50%, 0, 62%, 30%, right);
+    }
+  }
+}
+
+.article(@gap, @maxWidth, @marginTop) {
+  display: flex;
+  flex-direction: column;
+  gap: @gap;
+  width: 100%;
+  max-width: @maxWidth;
+  margin-top: @marginTop;
+}
+
+.h1(@fontSize, @lineHeight, @width) {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: @fontSize;
+  font-style: normal;
+  line-height: @lineHeight;
+  color: @white;
+  width: @width;
+}
+
+.mobile_banner {
+  height: calc(~"100vh + 36px + 20px");
+  padding: 0 35px;
+  background-image: 
+    url('@{banner-images-mobile}/mobile-leaves.png'),
+    url('@{banner-images-mobile}/mobile-plantperson.png');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 67%, 80% 40%;
+  background-position: 0 0, center 90%;
+
+  > article {
+    .article(16px, 100%, calc(~"36px + 20px + 36px"));
+
+    > h1 {
+      .h1(40px, 49px, 251px);
+    }
+  }
+}
+
+.desktop_banner(
+  @article-size, 
+  @left-leaves-size, 
+  @left-leaves-position,
+  @center-image-position,
+  @right-leaves-size,
+  @right-leaves-position
+) {
+  height: 500px;
+  background-image: 
+    url('@{banner-images-desktop}/left-leaves.png'), 
+    url('@{banner-images-desktop}/right-leaves.png'),
+    url('@{banner-images-desktop}/plantperson.png');
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: @left-leaves-size 100%, @right-leaves-size 100%, 335px 428px;
+  background-position: @left-leaves-position center, @right-leaves-position center, @center-image-position center;
+
+  > article {
+    .article(24px, @article-size, calc(~"57px + 25px + 47px"));
+
+    > h1 {
+      .h1(70px, 85px, 400px);
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../globalStyle/main.less';
+
+section#results {
+  .section();
+
+  @media screen {
+    @media (max-width: @tablet-max) {
+      .mobile_results();
+    }
+
+    @media (min-width: @desktop-sm-min) {
+      .desktop_results(@max-sm-content-size);
+    }
+
+    @media (min-width: @desktop-md-min) {
+      .desktop_results(@max-md-content-size);
+    }
+
+    @media (min-width: @desktop-lg-min) {
+      .desktop_results(@max-lg-content-size);
+    }
+
+    @media (min-width: @desktop-xl-min) {
+      .desktop_results(@max-xl-content-size);
+    }
+  }
+}
+
+.article(@direction, @maxWidth) {
+  display: flex;
+  flex-direction: @direction;
+  width: 100%;
+  max-width: @maxWidth;
+}
+
+.mobile_results {
+  padding: 32px 35px;
+
+  > article {
+    .article(column, 430px);
+    align-items: center;
+    gap: 38px;
+  }
+}
+
+.desktop_results(@article-size) {
+  padding-top: 37px;
+  padding-bottom: 68px;
+
+  > article {
+    .article(row, @article-size);
+  }
+}

@@ -1,0 +1,74 @@
+@import '../../globalStyle/main.less';
+
+section#commands {
+  .section();
+  background-color: @white;
+
+  @media screen {
+    @media (max-width: @tablet-max) {
+      .mobile_commands();
+    }
+
+    @media (min-width: @desktop-sm-min) {
+      .desktop_commands(@max-sm-content-size);
+    }
+
+    @media (min-width: @desktop-md-min) {
+      .desktop_commands(@max-md-content-size);
+    }
+
+    @media (min-width: @desktop-lg-min) {
+      .desktop_commands(@max-lg-content-size);
+    }
+
+    @media (min-width: @desktop-xl-min) {
+      .desktop_commands(@max-xl-content-size);
+    }
+  }
+}
+
+.mobile_commands {
+  padding: 18px 35px 38px;
+
+  > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+
+    > .question-card {
+      width: 100%;
+      max-width: 430px;
+      gap: 13px;
+
+      > select {
+        margin-top: 13px;
+      }
+    }
+  }
+}
+
+.desktop_commands(@article-size) {
+  padding: 53px 0;
+
+  > article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: @article-size;
+
+    > .question-card {
+      width: 30%;
+      min-width: 150px;
+      max-width: 300px;
+      gap: 50px;
+
+      > div + div {
+        height: 66px;
+      }
+    }
+  }
+}

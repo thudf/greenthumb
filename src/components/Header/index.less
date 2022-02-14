@@ -1,0 +1,52 @@
+@import '../../globalStyle/main.less';
+
+header {
+  .header();
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  min-width: @min-page-width;
+  width: 100%;
+
+  @media screen {
+    @media (max-width: @tablet-max) {
+      .mobile_header();
+    }
+
+    @media (min-width: @desktop-sm-min) {
+      .desktop_header(@max-sm-content-size);
+    }
+
+    @media (min-width: @desktop-md-min) {
+      .desktop_header(@max-md-content-size);
+    }
+
+    @media (min-width: @desktop-lg-min) {
+      .desktop_header(@max-lg-content-size);
+    }
+
+    @media (min-width: @desktop-xl-min) {
+      .desktop_header(@max-xl-content-size);
+    }
+  }
+}
+
+.mobile_header {
+  padding: 36px 35px 0;
+
+  > nav {
+    width: 100%;
+  }
+}
+
+.desktop_header(@size) {
+  padding-top: 57px;
+  justify-content: center;
+
+  > nav {
+    width: 100%;
+    max-width: @size;
+  }
+}
